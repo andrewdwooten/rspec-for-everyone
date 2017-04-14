@@ -1,0 +1,22 @@
+<% if @user %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><%= @user.kittens.count %> Your Kittens!</h1>
+      </div>
+    </div>
+    <div class="row"></div>
+    <% @user.kittens.each do |kitten| %>
+      <div class="col-sm-3">
+        <h5><%= kitten.name %></h5>
+        <%= image_tag(kitten.image_url) %>
+      </div>
+    <% end %>
+    <% @user.kitty_castles.each do |castle| %>
+      <div class="col-sm-3">
+        <h5><%= castle.name %>
+    <% end %>
+  </div>
+<% else %>
+    <%= render partial: 'kittens/no_kitties' %>
+<% end %>
