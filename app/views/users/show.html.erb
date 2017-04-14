@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1><%= @user.kittens.count %> Your Kittens!</h1>
+        <h1><%= @user.kittens.count %> Kittens!</h1>
       </div>
     </div>
     <div class="row"></div>
@@ -12,9 +12,11 @@
         <%= image_tag(kitten.image_url) %>
       </div>
     <% end %>
+    <div class="col-sm-12">
+      <h1><%= @user.kitty_castles.count %> Kitty Castles!</h1>
     <% @user.kitty_castles.each do |castle| %>
       <div class="col-sm-3">
-        <h5><%= castle.name %>
+        <h5><%= castle.name %></h5>
     <% end %>
   </div>
 <% else %>
